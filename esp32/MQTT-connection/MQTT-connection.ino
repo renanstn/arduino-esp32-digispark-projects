@@ -1,12 +1,12 @@
 #include <PubSubClient.h>
 #include <WiFi.h>
 
-const char* ssid = "id_wifi";
-const char* password = "senha_wifi";
+const char* ssid = "wifi-id";
+const char* password = "wifi-senha";
 const char* mqttServer = "m16.cloudmqtt.com";
 const int mqttPort = 12435;
-const char* mqttUser = "usuario_mqtt";
-const char* mqttPassword = "senha_mqtt";
+const char* mqttUser = "user";
+const char* mqttPassword = "pass";
 int LED_BUILTIN = 2;
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -34,7 +34,7 @@ void setup() {
         Serial.println("Connecting to MQTT…");
         String clientId = "ESP32Client-";
         clientId += String(random(0xffff), HEX);
-        if (client.connect(clientId.c_str(), mqttUser, mqttPassword )) {
+        if (client.connect(clientId.c_str(), mqttUser, mqttPassword)) {
             Serial.println("connected");
         } else {
             Serial.print("failed with state ");
