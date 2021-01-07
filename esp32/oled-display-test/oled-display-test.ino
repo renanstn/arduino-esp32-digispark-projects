@@ -23,8 +23,12 @@ void setup() {
   // Comecei a printar na linha 16, pois até a 15 os pixels são amarelos
   display.setCursor(0, 16);
   // Display static text
-  display.println("Hello world!");
-  display.display(); 
+  display.println("Hello, world!");
+  display.display();
+  display.setTextSize(1);
+  display.setCursor(0, 0);
+  display.println("Texto amarelo...");
+  display.display();
 }
 
 void loop() {
